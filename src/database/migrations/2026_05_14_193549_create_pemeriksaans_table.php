@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pemeriksaans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('pendaftaran_id')
+            ->constrained('pendaftarans')
+            ->cascadeOnDelete();
+
+            $table->foreignId('dokter_id')
+                ->constrained('dokters')
+                ->cascadeOnDelete();
+
+            $table->string('tekanan_darah')->nullable();
+
+            $table->float('berat_badan')->nullable();
+
+            $table->float('tinggi_badan')->nullable();
+
+            $table->float('suhu_tubuh')->nullable();
+
+            $table->text('catatan')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pemeriksaans');
+    }
+};

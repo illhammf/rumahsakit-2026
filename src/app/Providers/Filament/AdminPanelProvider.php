@@ -52,8 +52,30 @@ class AdminPanelProvider extends PanelProvider
                 \Awcodes\Overlook\Widgets\OverlookWidget::class,
             ])
             ->navigationGroups([
-                NavigationGroup::make()
-                    ->label('Administration'),
+                    NavigationGroup::make()
+                        ->label('Master Data')
+                        ->icon('heroicon-o-circle-stack')
+                        ->collapsed(false),
+
+                    NavigationGroup::make()
+                        ->label('Pelayanan Pasien')
+                        ->icon('heroicon-o-clipboard-document-list')
+                        ->collapsed(false),
+
+                    NavigationGroup::make()
+                        ->label('Farmasi')
+                        ->icon('heroicon-o-beaker')
+                        ->collapsed(false),
+
+                    NavigationGroup::make()
+                        ->label('Keuangan')
+                        ->icon('heroicon-o-banknotes')
+                        ->collapsed(false),
+
+                    NavigationGroup::make()
+                        ->label('Administration')
+                        ->icon('heroicon-o-cog-6-tooth')
+                        ->collapsed(),
             ])
             ->userMenuItems([
                 'profile' => MenuItem::make()

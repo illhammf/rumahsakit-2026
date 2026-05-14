@@ -1,0 +1,32 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Obat;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class ObatSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        Obat::create([
+            'nama_obat' => 'Paracetamol',
+            'stok' => 100,
+            'harga' => 5000,
+            'jenis' => 'Tablet',
+            'expired_at' => '2027-12-31',
+        ]);
+
+        Obat::create([
+            'nama_obat' => 'Amoxicillin',
+            'stok' => 50,
+            'harga' => 10000,
+            'jenis' => 'Kapsul',
+            'expired_at' => '2027-10-10',
+        ]);
+    }
+}
