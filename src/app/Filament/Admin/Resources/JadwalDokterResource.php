@@ -21,6 +21,11 @@ class JadwalDokterResource extends Resource
     protected static ?string $pluralModelLabel = 'Data Jadwal Dokter';
     protected static ?int $navigationSort = 4;
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form

@@ -21,6 +21,12 @@ class ResepResource extends Resource
     protected static ?string $pluralModelLabel = 'Data Resep';
     protected static ?int $navigationSort = 2;
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+
     public static function form(Form $form): Form
     {
         return $form
